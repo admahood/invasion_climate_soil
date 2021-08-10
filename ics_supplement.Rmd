@@ -1,0 +1,267 @@
+---
+fontsize: 11pt
+geometry: margin=1in
+header-includes: \newcommand{\beginsupplement} {\renewcommand{\thetable}{S\arabic{table}}
+  \renewcommand{\thefigure}{S\arabic{figure}}}
+output:
+  pdf_document: default
+  word_document: default
+---
+
+\beginsupplement
+
+```{r setup, include=FALSE}
+knitr::opts_chunk$set(echo = FALSE, message = FALSE, warning = FALSE)
+options(knitr.kable.NA = '')
+
+```
+
+```{r, include = FALSE}
+library(captioner)
+library(knitr)
+library(stargazer)
+library(tidyverse)
+library(kableExtra)
+captioner(prefix = "Figure S", auto_space = FALSE, levels = 1, type = NULL,
+  infix = ".")
+
+lut_cover<- c("Bare" = "Bare Ground",
+          "Litter" = "Litter",
+          "Crypto" = "Biological Soil Crust",
+          "Rock" = "Rock",
+          "AIG" = "Annual Introduced Grass",
+          "AIF" = "Annual Introduced Forb",
+          "ANF" = "Annual Native Forb",
+          "PNG" = "Perennial Native Grass",
+          "PNF" = "Perennial Native Forb")
+
+lut_variables <- c("Bromus_TN_pct" = "Bromus N (%)", 
+                   "Bromus_TC_pct" = "Bromus C (%)",
+                   "Bromus_CN" = "Bromus C:N", "Other_TN_pct" = "Other N (%)",
+                   "Other_TC_pct" = "Other C (%)", "Other_CN" = "Other C:N", 
+                   "Poa_TN_pct" = "Poa N (%)", "Poa_TC_pct" = "Poa C (%)",
+                   "Poa_CN" = "Poa C:N", "Litter_TN_pct" = "Litter N (%)",
+                   "Litter_TC_pct" = "Litter C (%)", "Litter_CN" = "Litter C:N",
+                   "SOIL_SurSo4_kg_ha" = "Soil SurSo4 (kg/ha)",
+                   "SOIL_Ca_kg_ha" = "Soil Ca (kg/ha)", 
+                   "SOIL_Mg_kg_ha" = "Soil Mg (kg/ha)",
+                   "SOIL_CN" = "Soil C:N", "soil_n_kg_ha" = "Soil Total N (kg/ha)",
+                   "soil_c_kg_ha" = "Soil Total C (kg/ha)",
+                   "total_mineral_n" = "Soil Mineral N (kg/ha)",
+                   "NO3_kg_ha" = "Soil Nitrate (kg/ha)",
+                   "NH4_kg_ha" = "Soil Ammonium (kg/ha)",
+                   "ja_ju_def" = "Climatic Water Deficit",
+                   "ja_ju_aet" = "Actual Evapotranspiration",
+                   "tmin" = "Minimum Temperature",
+                   "Annuals" = "Annuals",
+                   "Perennials" = "Perennials",
+                   "Forbs" = "Forbs",
+                   "Grasses" = "Grasses",
+          "AIG" = "Annual Introduced Grass",
+          "AIF" = "Annual Introduced Forb",
+          "ANF" = "Annual Native Forb",
+          "PNG" = "Perennial Native Grass",
+          "PNF" = "Perennial Native Forb")
+
+lut_inv<- c("Intact Sagebrush" = "I",
+            "Invaded Sagebrush" = "II",
+            "Cheatgrass-dominated" = "III",
+            "Cheatgrass Dieoff" = "IV")
+```
+
+
+```{r}
+
+# Compiling a species list
+
+library(tidyverse)
+library(readxl)
+
+lut_spp <- c("VUBR" ="Vulpia bromoides"  , 
+              "ELCA" ="Taeniatherum caput-medusae",
+             "LASE" = "Lactuca seriola", 
+            "DESO" = "Descurainia sophia",
+              "SATR"="Salsola tragus" ,
+            "ALMI" = "Alyssum desertorum" , 
+            "TRDU"=  "Tragopogon dubius" , 
+            "CARX" ="Carex sp.",
+             "ACTH" = "Achnatherum thurberianum", 
+              "TEGL"= "Tetradymia glabrata",
+            "ERNA" =  "Ericameria nauseosa", 
+            "GRSP" =  "Grayia spinosa" ,
+            "CHVI" = "Chrysothamnus viscidiflorus" ,
+             "ARTR" = "Artemisia tridentata" , 
+              "PHDI"= "Phlox diffusa"  , 
+             "DICA"="Machaeranthera canescens", 
+             "AMIN" ="Amsinckia intermedia")
+
+sp13<- read_xlsx("data/data_2013/Species list.xlsx") %>%
+  pull(`Species list`) %>%
+  na.omit()
+
+sp16<- vroom::vroom("data/data_2016/Jones_Cover_16.csv") %>%
+  dplyr::select(ends_with("_A")) %>%
+  dplyr::select(-Inv_AG_A, -Inv_AF_A, -Nat_PG_A, -Shrub_A, -Nat_AF_A, -Nat_PF_A) %>%
+  names %>%
+  str_replace_all("_A", "")
+
+sp16_clean<- lut_spp[sp16] %>% na.omit %>% as.character
+```
+
+```{r}
+soilweb <- read_csv("data/soilweb.csv") %>%
+  dplyr::select(Site=`Site number`, `Invasion Stage` = `Site type`,`Elevation (m)`,
+                CaCO3, "Soil Series"=X8) %>%
+  mutate(`Elevation (m)` = round(`Elevation (m)`),
+         `Invasion Stage` = replace(`Invasion Stage`, `Invasion Stage` == "Mixed", "Invaded sagebrush"),
+         `Invasion Stage` = replace(`Invasion Stage`, `Invasion Stage` == "Die-off", "Cheatgrass Die-off"))
+  
+kable(soilweb, 
+      caption = "Soil series at each site extracted from the web soil survey (Ogeen 2017, https://casoilresource.lawr.ucdavis.edu/gmap/). Sites 4, 5, 19, 20 and 21 were not resampled in 2016",
+      # escape=F,
+      booktabs=T, format="latex") %>%
+  kable_styling(latex_options = "scale_down")
+
+```
+
+
+\newpage
+
+```{R}
+df<-c(sp13, sp16_clean) %>%
+  na.omit()%>%
+  as_tibble() %>%
+  arrange(value) %>%
+  filter(!str_detect(value,"Unk"))%>%
+  dplyr::rename(Species=value) %>%
+  mutate(Species = str_c("\\emph{", Species, "}"))
+
+
+kable(cbind(df[1:23,], df[24:46,]), escape=F, booktabs=T, caption = "Species list",
+        linesep="")
+  
+
+```
+
+```{r}
+
+read_csv("figures/envfit.csv") %>%
+  dplyr::rename(Variable = Variables) %>%
+  mutate(NMDS1 = round(NMDS1, 2),
+         NMDS2 = round(NMDS2, 2),
+         r2 = round(r2, 2),
+         p = round(p,4)) %>%
+  kable(caption = "Significant (p < 0.5) Correlations of plant function group cover and plant tissue concentrations with the NMS ordination. Soil variables were also tested but none were significantly correlated with the ordination.",
+        col.names = c("Variable", "NMDS1", "NMDS2","R$^2$", "p"),
+        format = "latex", escape=F,
+        booktabs = T)  %>%
+  pack_rows(group_label = "Plant Functional Groups", start_row = 1, end_row=8) %>%
+    pack_rows(group_label = "Soil Nutrients ", start_row = 9, end_row=10) %>%
+  pack_rows(group_label = "Plant Tissue Nutrents", start_row = 11, end_row = 17)
+
+```
+
+
+```{r, message=F, echo=F, warning=F, results='asis'}
+heterogeneity_table_long <- read_csv("figures/heterogeneity_table_long.csv")
+
+heterogeneity_table_long%>%
+  filter(variable != "SOIL_SurSo4_kg_ha",
+         variable != "SOIL_Ca_kg_ha",
+         variable != "SOIL_Mg_kg_ha") %>%
+  mutate(variable = lut_variables[variable]) %>%
+    mutate(variable = str_replace_all(variable, "3", "$_3$"),
+           variable = str_replace_all(variable, "4", "$_4$"),
+           variable = str_replace_all(variable, "\\(", "\\("),
+           variable = str_replace_all(variable, "\\)", "\\)"),
+           variable = str_replace_all(variable, "\\%", "\\\\%"))%>%
+  kable(caption = "Standard deviations of three replicated samples at each site, grouped by invasion stage and then averaged. Letters indicate significantly different groups according to a Bonferonni-adjusted Kruskal-Wallis test.",
+        format = "latex", digits=1,
+        escape=F,
+        booktabs=T,
+        linesep=c("","","\\addlinespace"),
+      col.names = c("", "I. Intact\nSagebrush","", "II. Invaded Sagebrush","",
+                    "III. Cheatgrass- dominated","", "IV. Cheatgrass Dieoff",""))%>%
+  kable_styling(font_size = 8) %>%
+  column_spec(c(2,4,6,8), width = "2cm") %>%
+  column_spec(c(3,5,7,9), width = "0.5cm")#, latex_options = "scale_dow")
+
+
+```
+
+
+
+
+
+```{r}
+source("R/a_prep_mjcb.R")
+
+read.csv("data/Jones_2013_transect_dec17.csv") %>%
+  dplyr::select(Bare, Litter, Crypto, Rock, Site.type, AIG, AIF, PNF, PNG, ANF) %>%
+  group_by(Site.type) %>%
+  summarise_all(mean) %>%
+  ungroup() %>%
+  pivot_longer(-Site.type,names_to = "variable", values_to = "value") %>%
+  mutate(value = round(value, 2)) %>%
+  pivot_wider(names_from = Site.type, values_from = value, id_cols = variable) %>%
+  dplyr::select(variable,`Intact Sagebrush` = I, `Invaded Sagebrush` = M,
+                `Cheatgrass-Dominated` = C, `Cheatgrass Dieoff`=D)%>%
+rbind(
+read.csv("data/jones_all_nov_2017.csv") %>%
+  dplyr::select(Bare, Litter, Crypto, Rock, Site.type, AIG, AIF, PNF, PNG, ANF) %>%
+  group_by(Site.type) %>%
+  summarise_all(mean) %>%
+  ungroup() %>%
+  pivot_longer(-Site.type,names_to = "variable", values_to = "value") %>%
+  mutate(value = round(value,2)) %>%
+  pivot_wider(names_from = Site.type, values_from = value, id_cols =variable) %>%
+  dplyr::select(variable, `Intact Sagebrush` = I, `Invaded Sagebrush` = M,
+                `Cheatgrass-Dominated` = C, `Cheatgrass Dieoff`=D)) %>%
+  mutate(variable = lut_cover[variable])%>%
+  kableExtra::kable(caption = "Mean understory cover values for each invasion stage.",
+                    booktabs = T)%>%
+  kable_styling(latex_options = "scale_down") %>%
+  pack_rows("2013",1,9) %>%
+  pack_rows("2016",10,18)
+
+```
+
+\newpage
+
+```{r sem tables, message=F, echo=F, warning=F, results='asis'}
+# source("R/d_sem_mods.R")
+
+sem_df <-read_csv("data/sem_df.csv") %>%
+  mutate(Model = str_replace_all(Model,"&", "and"),
+         Model = str_replace_all(Model, "Soil Total C and N, ", "")) 
+
+kable(sem_df[1:2,],
+      booktabs = T,
+  linesep = "",
+      caption = "Path model results and fit indices.",
+      col.names = c("Model", "df",  "p","$X^2$", "CFI", "TLI", "RMSEA", "SRMR"),
+      escape = F) %>%
+  footnote(general =c("CFI: Comparative Fit Index.",
+                      "TLI: Tucker-Lewis Index.",
+                      "RMSEA: Root Mean Square Error of Approximation.",
+                      "SRMR: Standardized Root Mean Square Residual.")) 
+
+```
+
+```{r covariance_matrixes}
+load("data/sem_fits.Rda")
+library(lavaan)
+
+fitted(scn_12_fit)$cov %>%
+  round(3) %>%
+  as_tibble(rownames = "x") %>%
+  kable(booktabs=T, caption = "Covriance matrix for the Soil C and N path model for invasion stages I and II") %>%
+  kable_styling(latex_options = "scale_down")
+
+fitted(scn_34_fit)$cov %>%
+  round(3) %>%
+  as_tibble(rownames = "x") %>%
+  kable(booktabs=T, caption = "Covriance matrix for the Soil C and N path model for invasion stages III and IV") %>%
+  kable_styling(latex_options = "scale_down")
+
+```

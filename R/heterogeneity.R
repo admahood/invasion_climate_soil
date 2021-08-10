@@ -89,36 +89,3 @@ for (i in 1:9){
 }
 
 write_csv(heterogeneity_table, "figures/heterogeneity_table.csv")
-# 
-# 
-# ggplot(all_sd)+
-#   geom_boxplot(aes(y = soil_c_kg_ha, x = `Invasion Stage`)) +
-#   geom_jitter(aes(y=soil_c_kg_ha, x=`Invasion Stage`))+
-#   #facet_wrap(~Year)+
-#   ylab("Within-site Variability of Soil Total C") +
-#   annotate("text",x = c(1,2,3,4), 
-#                 y = c(1900,2100,1400,1700), 
-#                 label = c("a", "ab", "ab", "b"),
-#            fontface="bold", size=6)+
-#   ggsave("figures/hetero_boxplot.png") 
-#  
-# ggplot(all_sd)+
-#   # geom_boxplot(aes(y = soil_c_kg_ha, x = `Invasion Stage`)) +
-#   geom_violin(aes(y = soil_c_kg_ha, x = `Invasion Stage`)) +
-#   geom_jitter(aes(y=soil_c_kg_ha, x=`Invasion Stage`))+
-#   # facet_wrap(~Year)+
-#   ylab("Within-site Variability of Soil Total C") +
-#   annotate("text",x = c(1,2,3,4), 
-#            y = c(1900,2100,1400,1700), 
-#            label = c("a", "ab", "ab", "b"),
-#            fontface="bold", size=6)+
-#   ggsave("figures/hetero_violinplot.png") 
-# 
-# ggplot(all_sd)+
-#   geom_dotplot(binaxis="y",aes(y=soil_c_kg_ha, x=`Invasion Stage`,fill=`Invasion Stage`),
-#                method="histodot", stackgroups = T, stackdir = "center")+
-#   ylab("Within-site Variability of Soil Total C") +
-#   theme_classic()+
-#   theme(legend.position = c(1,1),
-#         legend.justification = c(1,1))+
-#   ggsave("figures/hetero_dotplot.png") 
