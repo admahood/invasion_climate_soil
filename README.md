@@ -2,9 +2,9 @@
 
 
 
-[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi.org/10.5281/zenodo.5176664)
+This repo: [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi.org/10.5281/zenodo.5176664)
 
-[![DOI](https://zenodo.org/badge/DOI/10.1111/gcb.15921.svg)](https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)
+Relevant paper: [![DOI](https://zenodo.org/badge/DOI/10.1111/gcb.15921.svg)](https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)
 
 
 This repository houses the data and code to reproduce the analysis of our paper in Global Change Biology: "Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"
