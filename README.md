@@ -3,7 +3,7 @@
 
 # invasion_climate_soil
 
-This repository houses the data and code to reproduce the analysis of our paper in Global Change Biology: "Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"
+This repository houses the data and code to reproduce the analysis of our paper in Global Change Biology: **"Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"**
 
 The script to create figures 1 and 2 is `R/c_js_figs.R`, and the script for figures 3 and 4 is `R/tidymods.R`.
 
