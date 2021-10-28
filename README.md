@@ -5,7 +5,9 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi.org/10.5281/zenodo.5176664)
 
 
-This is the repository that houses the data and code to reproduce the analysis of our paper in Global Change Biology: "Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland" [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)(https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)]
+This is the repository that houses the data and code to reproduce the analysis of our paper in Global Change Biology: "Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"
+
+[![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)
 
 
 The script to create figures 1 and 2 is `R/c_js_figs.R`, the script for figures 3 and 4 is `R/tidymods.R`.
