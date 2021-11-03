@@ -1,6 +1,9 @@
 
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi.org/10.5281/zenodo.5176664) [![DOI](https://zenodo.org/badge/DOI/10.1111/gcb.15921.svg)](https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)
 
+
+![Summary Poster](AGU_poster.png)
+
 # invasion_climate_soil
 
 This repository houses the data and code to reproduce the analysis of our paper in Global Change Biology: **"Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"**
@@ -15,4 +18,3 @@ Full citation for the paper is here:
 
 Mahood, A. L., Jones, R. O., Board, D. I., Balch, J. K., & Chambers, J. C. (2021). Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semiarid shrubland. Global Change Biology, 00, 1– 18. https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921 
 
-![Summary Poster](AGU_poster.png)
