@@ -2,7 +2,7 @@
 [![DOI](https://zenodo.org/badge/DOI/10.5281/zenodo.5176664.svg)](https://doi.org/10.5281/zenodo.5176664) [![DOI](https://zenodo.org/badge/DOI/10.1111/gcb.15921.svg)](https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921)
 
 
-![Summary Poster](AGU_poster.pdf)
+![Summary Poster](AGU_poster.png)
 
 # invasion_climate_soil
 
