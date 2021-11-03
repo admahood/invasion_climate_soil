@@ -1,16 +1,16 @@
 ---
-title: "Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semi-arid shrubland"
+title: Interannual climate variability mediates changes in carbon and nitrogen pools
+  caused by annual grass invasion in a semi-arid shrubland
 author:
-  - Adam L. Mahood^1,2^ *
-  - Rachel O. Jones^3^
-  - David I. Board^4^
-  - Jennifer K. Balch^1,2^
-  - Jeanne C. Chambers^4^
-# may use lua filters for affiliations etc: see https://stackoverflow.com/a/52919256
-
-# date: `r Sys.Date()`
-
+- Adam L. Mahood^1,2^ *
+- Rachel O. Jones^3^
+- David I. Board^4^
+- Jennifer K. Balch^1,2^
+- Jeanne C. Chambers^4^
+subtitle: 'Running title: Climate and invasion interact to change soil'
 output:
+  pdf_document:
+    toc: no
   bookdown::pdf_document2:
     fig_caption: yes
     fig_width: 7
@@ -21,28 +21,23 @@ output:
     toc: no
     includes:
       in_header: header.tex
-    
+  word_document: default
+always_allow_html: yes
 documentclass: article
-# classoption: twocolumn, landscape, etc
 papersize: a4
-pagestyle: plain  # plain, empty, headings
+pagestyle: plain
 geometry: margin=1in
 linestretch: 2
 fontfamily: mathpazo
 fontsize: 11pt
-
-bibliography: 
-  - refs.bib
-
-
+bibliography: refs.bib
 csl: global-change-biology.csl
-
 link-citations: yes
 linkcolor: RoyalBlue
 urlcolor: RoyalBlue
-links-as-notes: false
-
+links-as-notes: no
 ---
+
 
 
 \small
@@ -58,23 +53,29 @@ links-as-notes: false
 
 `*` Corresponding author: admahood@gmail.com
 
+
+ORCID IDs:
+
+  - Adam L. Mahood 0000-0003-3791-9654
+  - Rachel O. Jones 0000-0002-6323-0036
+  - David I. Board 0000-0001-6140-1260 
+  - Jennifer K. Balch 0000-0002-3983-7970
+  - Jeanne C. Chambers 0000-0003-3111-269X
+
 \normalsize
 
 \newpage
 
 # ABSTRACT
 
-Exotic plant invasions alter ecosystem properties and threaten ecosystem functions globally. Interannual climate variability (ICV) influences both plant community composition (PCC) and soil properties, and interactions between ICV and PCC may influence nitrogen (N) and carbon (C) pools. We asked how ICV and non-native annual grass invasion covary to influence soil and plant N and C in a semiarid shrubland undergoing widespread ecosystem transformation due to invasions and altered fire regimes. We sampled four progressive stages of annual grass invasion at 20 sites across a large (25,000 km$^2$) landscape for plant community composition, plant tissue N and C, and soil total N and C in 2013 and 2016, which followed two years of dry and two years of wet conditions, respectively.
-    
-Multivariate analyses and ANOVAs showed that in invasion stages where native shrub and perennial grass and forb communities were replaced by annual grass-dominated communities, the ecosystem lost more soil N and C in wet years. Path analysis showed that high water availability led to higher herbaceous cover in all invasion stages. In stages with native shrubs and perennial grasses, higher perennial grass cover was associated with increased soil C and N, while in annual-dominated stages, higher annual grass cover was associated with losses of soil C and N. Also, soil total C and C:N ratios were more homogeneous in annual-dominated invasion stages as indicated by within-site standard deviations. Loss of native shrubs and perennial grasses and forbs coupled with annual grass invasion may lead to long-term declines in soil N and C and hamper restoration efforts. Restoration strategies that use innovative techniques and novel species to address increasing temperatures and ICV and emphasize maintaining plant community structure – shrubs, grasses, and forbs – will allow sagebrush ecosystems to maintain C sequestration, soil fertility and soil heterogeneity. 
+Exotic plant invasions alter ecosystem properties and threaten ecosystem functions globally. Interannual climate variability (ICV) influences both plant community composition (PCC) and soil properties, and interactions between ICV and PCC may influence nitrogen (N) and carbon (C) pools. We asked how ICV and non-native annual grass invasion covary to influence soil and plant N and C in a semiarid shrubland undergoing widespread ecosystem transformation due to invasions and altered fire regimes. We sampled four progressive stages of annual grass invasion at 20 sites across a large (25,000 km$^2$) landscape for plant community composition, plant tissue N and C, and soil total N and C in 2013 and 2016, which followed two years of dry and two years of wet conditions, respectively. Multivariate analyses and ANOVAs showed that in invasion stages where native shrub and perennial grass and forb communities were replaced by annual grass-dominated communities, the ecosystem lost more soil N and C in wet years. Path analysis showed that high water availability led to higher herbaceous cover in all invasion stages. In stages with native shrubs and perennial grasses, higher perennial grass cover was associated with increased soil C and N, while in annual-dominated stages, higher annual grass cover was associated with losses of soil C and N. Also, soil total C and C:N ratios were more homogeneous in annual-dominated invasion stages as indicated by within-site standard deviations. Loss of native shrubs and perennial grasses and forbs coupled with annual grass invasion may lead to long-term declines in soil N and C and hamper restoration efforts. Restoration strategies that use innovative techniques and novel species to address increasing temperatures and ICV and emphasize maintaining plant community structure – shrubs, grasses, and forbs – will allow sagebrush ecosystems to maintain C sequestration, soil fertility and soil heterogeneity. 
 
 
 *Keywords*: Annual grass conversion, soil carbon, soil nitrogen, soil homogenization, *Bromus tectorum*, *Artemisia tridentata*, path models, restoration
 
 \newpage
-\bleft
 
-
+<!-- \bleft -->
 
 
 
@@ -149,7 +150,7 @@ cite_options(citation_format = "pandoc")
 
 # 1. INTRODUCTION
 
-Exotic plant invasions threaten biological diversity and ecosystem function [@Lonsdale1999; @Buckley2016] and have long-term ecological consequences [@Mack2000]. Plants modify the soil physical and chemical environment in ways that feed back to vegetation community composition and structure, and non-native, invasive plant species may alter soil properties in ways that differ from native plants [@Schimel1991; @Schimel1994; @DAntonio2009; @Sardans2017]. In addition, there is increasing recognition that “year effects” have been generally overlooked in ecological studies [@Werner2020], and that interannual climatic variability can lead to boom and bust cycles where plant establishment, plant growth, and soil nutrient cycling are high in wet years and very low in dry years [@Hallett2019; @Potts2019; @Puritty2019]. Understanding the differential effects of native and invasive plant species on soil and plant nitrogen (N) and carbon (C) and how these effects interact with interannual climatic variability may help explain the success of invasive species in water-limited environments [@Ehrenfeld2001].
+Exotic plant invasions threaten biological diversity and ecosystem function [@Lonsdale1999; @Buckley2016] and have long-term ecological consequences [@Mack2000]. Plants modify the soil physical and chemical environment in ways that feed back to vegetation community composition and structure, and non-native, invasive plant species alter soil properties in ways that differ from native plants [@Schimel1991; @Schimel1994; @DAntonio2009; @Sardans2017]. In addition, there is increasing recognition that “year effects” have been generally overlooked in ecological studies [@Werner2020], and that interannual climatic variability (ICV) can lead to boom and bust cycles where plant establishment, plant growth, and soil nutrient cycling are high in wet years and very low in dry years [@Hallett2019; @Potts2019; @Puritty2019]. Understanding the differential effects of native and invasive plant species on soil and plant nitrogen (N) and carbon (C) and how these effects interact with interannual climatic variability may help explain the persistence of invasive species in water-limited environments [@Ehrenfeld2001].
 
 In the western United States, sagebrush (*Artemisia* L. [Asteraceae]) ecosystems are being invaded by a non-native annual grass, *Bromus tectorum* L. (Poaceae) [@Germino2016]. In areas where native perennial grasses and forbs have been displaced, *B. tectorum* can become the dominant understory component of the *A. tridentata* community [@Chambers2007; @Chambers2016]. This dominance can modify the pools and fluxes of soil C and N [@Hooker2008biogeochem; @Leffler2016], as well as increase fire probability by increasing the abundance and spatial continuity of fine fuels [@Davies2013; @Bradley2018; @Chambers2019]. After a fire occurs, plant community composition often experiences several years of instability after which *B. tectorum* can dominate [@Mack1981; @Davies2011; @Bradford2014; @Mahood2019]. Domination after a period of system instability implies a process of niche modification [@Fukami2015; @Grman2010] in which the invader alters the soil’s physical and chemical environment in ways that facilitate its persistence [@Schimel1991; @Schimel1994; @DAntonio2009; @Sardans2017]. This self-reinforcing feedback is also likely to be influenced by external drivers like climate [@Maestre2016].
 
@@ -157,7 +158,8 @@ Interannual climatic variability is the primary control on soil water content in
 
 Soil nutrient cycling can differ between invaded and native ecosystems, in particular cycling of C and N [@Wilsey2020; @Nagy2021]. Many invasive species have high growth rates and nutrient concentrations that can result in increased rates of litter decomposition, mineralization, and nitrification [@Ehrenfeld2001; @Allison2005; @Liao2008; @Sardans2017]. 
 
-Additionally, soil texture interacts with precipitation to influence the rate of nutrient cycling and productivity [@Austin2004]. Failing to account for soil texture when studying nutrient cycling could lead to spurious results. This is because in systems with annual precipitation below 370 mm, more soil water is lost via evaporation. Because water penetrates deeper into coarse-textured soils, they are more productive than finer textured soils due to lower soil water-holding capacity [the inverse texture hypothesis, @Noy-Meir1973; @Sala1988]. 
+<!-- deleted per reviewer -->
+<!-- Additionally, soil texture interacts with precipitation to influence the rate of nutrient cycling and productivity [@Austin2004]. Failing to account for soil texture when studying nutrient cycling could lead to spurious results. This is because in systems with annual precipitation below 370 mm, more soil water is lost via evaporation. Because water penetrates deeper into coarse-textured soils, they are more productive than finer textured soils due to lower soil water-holding capacity [the inverse texture hypothesis, @Noy-Meir1973; @Sala1988].  -->
 
 In *A. tridentata*  ecosystems, pools of inorganic and total N are often higher in *B. tectorum*-invaded sites compared to uninvaded sites [@Booth2003; @Norton2004; @Hooker2008biogeochem; @Gasch2013; @Johnson2011; @Stark2015; but see @Rau2011]. This is attributed to greater biomass turnover, faster rates of soil N cycling, and redistribution of inorganic N in surface soils [@Hooker2008biogeochem]. But single-year measurements of high N content are not necessarily indicative of long-term N storage, because the N cycle is highly sensitive to interannual climate variability [@Austin2004]. In years with low, but highly variable soil moisture, the transformation of N by microbes and uptake of N by plants can be asynchronous. This is because microbes respond faster to smaller amounts of moisture than plants [@Dijkstra2012]. Furthermore, higher evaporation and soil temperatures in annual grass monocultures [@Turnbull2012] decreases the capacity of plants to activate and uptake labile N following small moisture pulses. Thus, inorganic N can accumulate in dry years due to production of inorganic N by microbes coupled with a lack of plant uptake [@Evans2001; @Hanan2017; @Norton2008]. This unused, labile N may leave the system via leaching or nitrification [@Austin2004; @Hanan2017]. When a system composed of deep-rooted perennial plants is converted to shallow-rooted herbaceous annuals, the depth that labile N must travel before it can no longer be accessed by the plant community decreases [@Rau2011, @Kulmatiski2020].
 
@@ -181,20 +183,20 @@ The sites had four stages of *B. tectorum* invasion: (1) six sites with a mature
 
 ## 2.2 Field data collection
 
-At each site, we established six, 50 m transects that were parallel and spaced 20 m apart. Transects were measured in adjacent pairs, yielding 3 replicates per site. We measured shrub cover and collected composite samples of soils and litter biomass along these transect pairs before active growth began in early-mid April 2013 and in late March 2016. The transect pairs were re-sampled during peak production in early-mid June 2013 and in mid-late June 2016. During the second visit, we estimated the cover of all plant species and ground cover and collected composite samples of herbaceous vegetation for nutrient analysis. A list of all species encountered is in the supplementary material (Table S2)
+At each site, we established six, 50 m transects that were parallel and spaced 20 m apart. Transects were measured in adjacent pairs, yielding three replicates per site. We measured shrub cover and collected composite samples of soils and litter biomass along these transect pairs before active growth began in early-mid April 2013 and in late March 2016. The transect pairs were re-sampled during peak production in early-mid June 2013 and in mid-late June 2016. During the second visit, we estimated the cover of all plant species and ground cover and collected composite samples of herbaceous vegetation for nutrient analysis. A list of all species encountered is in the supplementary material (Table S2)
 
 We measured the cover of all shrub species at each site using the line-intercept method in 2013 [@Elzinga1998]. The length of each shrub that intercepted the transect line was measured and then the lengths were summed to calculate total shrub distance. Percent shrub cover was determined by dividing the total shrub distance by the total transect distance.
 
 In April 2013 and March 2016, litter and soil samples were collected systematically every 5m along each transect for a total of 11 samples per transect (n = 22 per transect pair, n = 66 per site). Litter biomass was removed from a 15x15 cm patch at each sampling location along the transect, and then soil samples were collected from the same locations with a punch auger to a depth of 0-10 cm. Soil samples from each transect pair were placed in a bucket and homogenized, returned to the lab, and sieved to <2 mm. Soil samples (n = 3 sub-samples per site) were air-dried and sent to the Soil, Water and Forage Analytical Laboratory (SWFAL) at Oklahoma State University where they were analyzed for percent total C and total N using a LECO TruSpec CN Analyzer (LECO Corp., St. Joseph, MI, USA), and NO$_3$ -N and NH$_4$ -N using KCl extraction and quantification with a Lachat® autoanalyzer. Soil Mg and Ca were measured using Mehlich 3 extraction and quantification with a Spectro ICP, and SO$_4$ -S using calcium phosphate monobasic extraction and quantification with a Spectro ICP. One bulk density sample was collected systematically at each transect pair, for a total of three samples per plot, with a 6 cm tall x 5 cm diameter metal cylinder. Samples were returned to the lab, dried at 105 degrees Celsius and weighed after the mass stabilized. Samples were then sieved to <2 mm. The weight and volume of any gravel removed was subtracted from the raw bulk density measurements. We used the mean of the three adjusted bulk density measurements at each plot to convert concentrations measured in the lab to area-based content. Litter biomass was oven dried at 60° C, ground in a Udy mill, and then sent to SWFAL where it was analyzed for total C and N using a LECO TruSpec CN Analyzer (LECO Corp., St. Joseph, MI, USA).
 
-In June, a 0.1m2 quadrat was placed along the transect adjacent to the litter and soil sampling location and used to visually estimate basal and aerial cover of all species, litter, bare ground, rocks, cryptograms, and dung. Standard protocols were used and frequent calibrations among estimators were conducted [@Elzinga1998]. We used these estimates to summarize species cover by functional groups: native shrubs (SH), perennial native grasses (PNG), perennial native forbs (PNF), annual native forbs (ANF), annual invasive grasses (AIG), and annual invasive forbs (AIF). After cover was estimated, aboveground biomass of *B. tectorum*, *Poa secunda* J. Presl (Poaceae), and all other herbaceous plants were harvested from the same quadrats. Samples were homogenized for the three different categories for every transect pair (n = 3 sub-samples per site) as was done for litter and soils. If either *B. tectorum* or *P. secunda*   were not collected from within the quadrats, an additional sample was taken nearby from within the site. Homogenized vegetation sub-samples were returned to the lab where they were oven dried at 60°C, ground, and weighed. Vegetation sub-samples were then sent to SWFAL for analysis of total C and N using a LECO TruSpec CN Analyzer (LECO Corp., St. Joseph, MI, USA).
+In June, a 0.1m$^2$ quadrat was placed along the transect adjacent to the litter and soil sampling location and used to visually estimate basal and aerial cover of all species, litter, bare ground, rocks, cryptograms, and dung. Standard protocols were used and frequent calibrations among estimators were conducted [@Elzinga1998]. We used these estimates to summarize species cover by functional groups: native shrubs (SH), perennial native grasses (PNG), perennial native forbs (PNF), annual native forbs (ANF), annual invasive grasses (AIG), and annual invasive forbs (AIF). After cover was estimated, aboveground biomass of *B. tectorum*, *Poa secunda* J. Presl (Poaceae), and all other herbaceous plants were harvested from the same quadrats. Samples were homogenized for the three different categories for every transect pair (n = 3 sub-samples per site) as was done for litter and soils. If either *B. tectorum* or *P. secunda*   were not collected from within the quadrats, an additional sample was taken nearby from within the site. Homogenized vegetation sub-samples were returned to the lab where they were oven dried at 60°C, ground, and weighed. Vegetation sub-samples were then sent to SWFAL for analysis of total C and N using a LECO TruSpec CN Analyzer (LECO Corp., St. Joseph, MI, USA).
 
 ## 2.3 Climate data
 
-We used minimum temperature (T$_\text{min}$), actual evapotranspiration (AET), precipitation, and climatic water deficit (CWD) derived from gridMET [@Abatzoglou2013] (Figure 1) to evaluate how climatic variability interacted with plant-soil relationships. We chose these variables because they closely reflect physical conditions important for plant growth and survival. Minimum temperature is important because of the effects of freezing, while AET and CWD represent the supply and demand components of atmospheric water balance [@Dobrowski2013]. We calculated precipitation for the water year preceding sampling because of the effects of antecedent precipitation on annual grass biomass and cover [@Pilliod2017].
+We used minimum temperature (T$_\text{min}$), actual evapotranspiration (AET), precipitation, and climatic water deficit (CWD) derived from gridMET [@Abatzoglou2013] (Fig. 1) to evaluate how climatic variability interacted with plant-soil relationships. We chose these variables because they closely reflect physical conditions important for plant growth and survival. Minimum temperature is important because of the effects of freezing, while AET and CWD represent the supply and demand components of atmospheric water balance [@Dobrowski2013]. We calculated precipitation for the water year preceding sampling because of the effects of antecedent precipitation on annual grass biomass and cover [@Pilliod2017].
 
 
-![Climatic conditions from January 2011 to January 2017 at the study sites. Dashed vertical lines are the dates of soil and litter sampling, dotted vertical lines are the dates of vegetation cover and biomass sampling. a-c show the monthly anomaly from 30-year normals of actual evapotranspiration, climatic water deficit, and minimum temperature, with each line representing one study site. In d, bars show the monthly precipitation anomaly at the Winnemucca, Nevada airport. The red lines represent yearly averages.](figures/figure_1_climate.pdf)
+
 
 ## 2.4 Analyzing changes in community composition
 
@@ -223,284 +225,49 @@ All statistical analyses were done in R [@R]. Data and code are publicly availab
 
 ## 3.1 Changes in community composition
 
-The NMDS ordination that evaluated community composition fit well (stress = 0.108; non-metric fit = 0.988; linear fit = 0.946), and sites were clustered according to invasion stage (Figure 2a). The NMDS axes represented gradients of perennial to annual cover and forb to grass cover (Figure 2b). NMDS axis 1 was positively correlated with annual plant cover and negatively correlated with perennial plant cover (R$^2$ = 0.95, Table S3). Axis 2 was positively correlated with forbs and negatively correlated with grasses (R$^2$ = 0.87, Table S3). Interannual compositional change was greater for invasion stages III and IV than stages I and II and followed the AIG vector (Figure 2a). This reflected greater herbaceous cover, particularly AIG cover, in the wet year at most sites. Total soil C and N were positively related to NMDS axis 2 (corresponding to forb cover) and negatively correlated with axis 1, which corresponded to perennial cover (Figure 2c). *B. tectorum*, *P. secunda* and other plant C, litter N and *P. secunda* C:N ratio were positively correlated with axis 1, which corresponded to annual versus perennial cover, and negatively correlated with axis 2, which corresponded to grass versus forb cover (Figure 2c). Litter C and other plant N concentrations were positively correlated with axes 1 and 2, corresponding to annual forb cover (Figure 2c).
-
-![Non-metric multidimensional scaling ordination illustrating the differences in understory composition, and soil, plant and litter N and C between 2013 and 2016. Graphs illustrate (a), the mean change from 2013 to 2016 by invasion stage;  (b), significant correlations (p < 0.05) of plant functional group cover with the ordination; and (c), significant correlations of soil, plant and litter nutrient concentrations with the ordination. The arrows in (a) represent the direction and magnitude of change. The length of each arrow in (b) and (c) corresponds to the R$^2$ of the correlation. AIG = annual invasive grass cover; AIF = annual invasive forb cover; PNF = perennial native forb cover; PNG = perennial native grass cover.](figures/fig_2_nmds_3panel.png)
+The NMDS ordination that evaluated community composition fit well (stress = 0.108; non-metric fit = 0.988; linear fit = 0.946), and sites were clustered according to invasion stage (Fig. 2a). The NMDS axes represented gradients of perennial to annual cover and forb to grass cover (Fig. 2b). NMDS axis 1 was positively correlated with annual plant cover and negatively correlated with perennial plant cover (R$^2$ = 0.95, Table S3). Axis 2 was positively correlated with forbs and negatively correlated with grasses (R$^2$ = 0.87, Table S3). Interannual compositional change was greater for invasion stages III and IV than stages I and II and followed the AIG vector (Fig. 2a). This reflected greater herbaceous cover, particularly AIG cover, in the wet year at most sites. Total soil C and N were positively related to NMDS axis 2 (corresponding to forb cover) and negatively correlated with axis 1, which corresponded to perennial cover (Fig. 2c). *B. tectorum*, *P. secunda* and other plant C, litter N and *P. secunda* C:N ratio were positively correlated with axis 1, which corresponded to annual versus perennial cover, and negatively correlated with axis 2, which corresponded to grass versus forb cover (Fig. 2c). Litter C and other plant N concentrations were positively correlated with axes 1 and 2, corresponding to annual forb cover (Fig. 2c).
 
 
-
-```{r results='asis'}
-aov_tab_s<-readRDS("data/aov_tab_soil.RDS") %>%
-  arrange(desc(response))%>%
-  filter(response != "Soil Ca (kg/ha)",
-         response != "Soil Mg (kg/ha)",
-         response != "Soil SO4 (kg/ha)") 
-aov_tab_p<-readRDS("data/aov_tab_plnt.RDS") 
-
-index_s <- table(aov_tab_s$response) %>% 
-                 as.data.frame() %>% 
-                 arrange(desc(Var1))
-
-index_ss<- index_s$Freq
-names(index_ss) <- index_s$Var1
-```
-
-
-```{r}
-soil_aov <- aov_tab_s %>% 
-  mutate(variable = replace(variable, variable == "Site.type", 
-                            "Invasion Stage"))%>%
-  mutate(variable = replace(variable, 
-                            variable == "Year:Site.type", 
-                            "Year x Invasion Stage")) %>%
-  mutate(`F value` = round(`F value`, 1),
-         DenDF = round(DenDF,1),
-         `Sum Sq` = round(`Sum Sq`, 1),
-         `Mean Sq` = round(`Mean Sq`, 1),
-         `P(>F)` = formatC(`Pr(>F)`, format = "f", digits=3) %>% 
-           as.character %>%
-           replace(.=="0.000", "<0.001"))%>%
-  arrange(desc(response)) %>%
-  dplyr::select(-`Sum Sq`, -`Mean Sq`, -DenDF, -NumDF, -`Pr(>F)`) %>%
-  mutate(response = str_replace_all(response,"SurSo4", "SO4"),
-         response = str_replace_all(response,"Mineral N", "NH4 + NO3"),
-         response = str_replace_all(response,"Nitrate", "NO3"),
-         response = str_replace_all(response,"Ammonium", "NH4"),
-         response = str_replace_all(response, " \\(kg/ha\\)", ""),
-         response = str_replace_all(response, " \\(%\\)", ""))%>%
-  pivot_wider(id_cols = response, names_from = "variable", values_from = c("F value", "P(>F)"))%>%
-  mutate(order = factor(response, levels =  c("Soil Total N",
-                                                 "Soil Total C",
-                                                 "Soil C:N",
-                                                 "Soil NO3", 
-                                                 "Soil NH4", 
-                                                 "Soil NH4 + NO3",
-                                                 "Soil SO4",
-                                                 "Soil Mg",
-                                                 "Soil Ca",
-                                                 "Litter N",
-                                                 "Litter C",
-                                                 "Litter C:N"))) %>%
-  arrange(order) %>%
-    mutate(response = str_replace_all(response, "3", "$_3$"),
-           response = str_replace_all(response, "4", "$_4$"))%>%
-  dplyr::select("Response Variable"=response, 
-                -order,
-                Year = "F value_Year",
-                "Year_" = "P(>F)_Year",
-                "Invasion Stage"= "F value_Invasion Stage",
-                "Invasion Stage_"= "P(>F)_Invasion Stage",
-                "Year x Invasion Stage" = "F value_Year x Invasion Stage",
-                "Year x Invasion Stage_" = "P(>F)_Year x Invasion Stage")
-
-plant_aov<- 
-aov_tab_p%>%
-  mutate(variable = replace(variable, variable == "Site.type",
-                            "Invasion Stage"))%>%
-  mutate(variable = replace(variable,
-                            variable == "Year:Site.type",
-                            "Year x Invasion Stage")) %>%
-  mutate(`F value` = round(`F value`, 1),
-         DenDF = round(DenDF,1),
-         `Sum Sq` = round(`Sum Sq`, 1),
-         `Mean Sq` = round(`Mean Sq`, 1),
-         `P(>F)` = formatC(`Pr(>F)`, format = "f", digits=3) %>% 
-           as.character %>%
-           replace(.=="0.000", "<0.001")) %>%
-  arrange(desc(response)) %>%
-  mutate(response = str_replace_all(response,"Poa", "\\\\emph\\{Poa\\}"))%>%
-  mutate(response = str_replace_all(response,"Bromus", "\\\\emph\\{Bromus\\}"))%>%
-  mutate(response = str_replace_all(response, "\\(%\\)", "")) %>%
-  dplyr::select(-`Sum Sq`, -`Mean Sq`, -DenDF, -NumDF,-`Pr(>F)`) %>%
-  pivot_wider(id_cols = response, names_from = "variable", values_from = c("F value", "P(>F)"))%>%
-  arrange(response) %>%
-  dplyr::select("Response Variable"=response,
-                Year = "F value_Year",
-                "Year_" = "P(>F)_Year",
-                "Invasion Stage"= "F value_Invasion Stage",
-                "Invasion Stage_"= "P(>F)_Invasion Stage",
-                "Year x Invasion Stage" = "F value_Year x Invasion Stage",
-                "Year x Invasion Stage_" = "P(>F)_Year x Invasion Stage")
-```
-
-
-```{r}
-
-kable(rbind(soil_aov, plant_aov),
-      booktabs=TRUE,
-      linesep=c("","","\\addlinespace"),
-      escape=F,
-      col.names=c("",
-                  "F", "P(>F)","F",
-                  "P(>F)","F", "P(>F)"),
-        caption = "Type III ANOVA results for soil total C and N, soil C:N ratio, soil nutrients, and litter and plant \\%C, \\%N, and C to N ratios. ANOVAs are based on mixed models with year and invasion stage as fixed effects, and site as the random effect. Denominator degrees of freedom (not shown) and F-statistics were calculated using the Kenward-Roger method") %>%
-add_header_above(c(" " = 1, "Year" = 2, "Invasion Stage" = 2, "Year x Invasion Stage"=2)) %>%
-  kableExtra::kable_styling(font_size = 8)
-  #   group_rows(index = index_ss)
-```
 
 ## 3.2 Soil and litter characteristics
 
-Soil C, N, C:N ratios, and secondary soil nutrients were all lower in 2016 than in 2013 (Table 1). Few meaningful patterns existed among invasion stages for the soil variables (Table 1), but there were several variables with significant interactions between the years and invasion stages. In the intact sagebrush stage (I) total N content was similar in 2013 and 2016 but in the other stages total N content was higher in 2013 than 2016 (Figure 3a). A similar but weaker pattern occurred for soil total C (p=0.039; Figure 3b). Soil SO$_4$ was lower for all invasion stages in 2016 except in stage IV, where it was similar for both years. (Figure 3d). Soil Ca was lower for all invasion stages in 2016 except in stage I, where it was similar for both years (Figure 3e). Litter N was higher in 2016 than in 2013 for stages I, II, and IV but did not differ in stage III (Figure 3g). Litter C and C:N were lower in 2016 than 2013 for stages I and II, but did not differ in stage III, while in stage IV C:N was lower in 2016 and C was similar in the two years (Tables 1, Figure 3h-i).
-
-
-![Effects of year and invasion stage on soil total C and N, soil C:N ratio (a-c), litter %C, %N, and C:N ratio (d-f), and soil total mineral N, nitrate, and ammonium (g-i). Open circles represent individual measurements. Diamonds and error bars represent the marginal means and 95% confidence intervals estimated from the linear mixed models. Year was always significant. When the interaction between invasion stage and year is significant, colored lowercase letters above the bars illustrate differences between years within each invasion stage based on the Tukey Honest Significant Differences post-hoc test. Grey capital letters illustrate significant differences among invasion stages when the interaction was not significant.](figures/tidy_soilvars_year.png)
+Soil C, N, C:N ratios, and secondary soil nutrients were all lower in 2016 than in 2013 (Table 1). Few meaningful patterns existed among invasion stages for the soil variables (Table 1), but there were several variables with significant interactions between the years and invasion stages. In the intact sagebrush stage (I) total N content was similar in 2013 and 2016 but in the other stages total N content was higher in 2013 than 2016 (Fig. 3a). A similar but weaker pattern occurred for soil total C (p=0.039; Fig. 3b). Soil SO$_4$ was lower for all invasion stages in 2016 except in stage IV, where it was similar for both years. (Fig. 3d). Soil Ca was lower for all invasion stages in 2016 except in stage I, where it was similar for both years (Fig. 3e). Litter N was higher in 2016 than in 2013 for stages I, II, and IV but did not differ in stage III (Fig. 3g). Litter C and C:N were lower in 2016 than 2013 for stages I and II, but did not differ in stage III, while in stage IV C:N was lower in 2016 and C was similar in the two years (Tables 1, Fig. 3h-i).
 
 Analyses of standard deviations of soil total C and N, litter %C, %N, and C:N ratios showed differences among invasion stage and year. When sites were grouped into the four invasion stages, within-site standard deviations differed only between stages I and IV for soil total C (Table S4). However, when sites were grouped by amount of *A. tridentata*  cover (stages I and II versus III and IV), within-site standard deviations in soil total C and soil C:N ratio were lower for stages III and IV than for stages I and II (Table 2). When the data were grouped by year, standard deviations of soil total N were higher in 2013, the dry year, while variation in litter N was higher in 2016, the wet year (Table 2).
 
 
-```{r, message=F, echo=F, warning=F, results='asis'}
-heterogeneity_table_long_s <- read_csv("figures/heterogeneity_table_long_sup.csv") %>%
-  filter(variable != "SOIL_Ca_kg_ha",
-         variable != "SOIL_Mg_kg_ha",
-         variable != "SOIL_SurSo4_kg_ha")
 
-heterogeneity_table_long_s %>%
-  mutate(variable = lut_variables[variable]) %>%
-    mutate(variable = str_replace_all(variable, "3", "$_3$"),
-           variable = str_replace_all(variable, "4", "$_4$"),
-           variable = str_replace(variable, "SurSo", "SO"),
-           variable = str_replace_all(variable, "\\(", "\\("),
-           variable = str_replace_all(variable, "\\)", "\\)"),
-           variable = str_replace_all(variable, "\\%", "\\\\%"),
-           variable = factor(variable, levels =c("Soil Total N (kg/ha)",
-                                                 "Soil Total C (kg/ha)",
-                                                 "Soil C:N",
-                                                 # "Soil SO$_4$ (kg/ha)",
-                                                 # "Soil Ca (kg/ha)",
-                                                 # "Soil Mg (kg/ha)",
-                                                 "Litter N (\\%)",
-                                                 "Litter C (\\%)",
-                                                 "Litter C:N")))%>%
-  arrange(variable) %>%
-  kable(caption = "Comparisons of stages I-II and stages III-IV and of the wet (2016) and dry (2013) years based on standard deviations calculated from three replicate samples from each site, averaged within each category. Letters indicate significant differences between grouped stages and years based on Kruskal-Wallis tests.", 
-        format = "latex", digits=1,
-        escape=F,
-        booktabs=T,
-        linesep=c("","","\\addlinespace"),
-        col.names = c("", "Stages I-II","", "Stages III-IV","",
-                      "2016 (Wet)","", "2013 (Dry)",""))%>%
-  kable_styling(font_size = 8) %>%
-  column_spec(c(2,4,6,8), width = "1cm") %>%
-  column_spec(6, width = "1cm", border_left = T) %>%
-  column_spec(c(3,5,7,9), width = "0.5cm")#, latex_options = "scale_dow")
-
-```
 
 ## 3.3 Plant tissue characteristics
 
-Carbon concentrations of *P. secunda*  , *B. tectorum* and other plants were higher in the wet year (2016) than the dry year (2013), and nitrogen concentrations were lower in the wet year. Because N concentrations were lower in the wet year, C:N ratios were higher (Figure 4, Table 1). *B. tectorum* had lower C concentrations in stage I than all other stages in the dry year (2013) (Figure 4). *P. secunda*   had higher N concentrations in stage III than II in 2013, but N concentrations did not vary by invasion stage in 2016. Both species had higher C concentration in stage III than stages I and II and higher N concentrations in stage IV than in stages I and II. As a result, C:N ratios were lower in stage IV than in stages I and II. The contrast in nutrient concentrations for other plants between the shrub-dominated versus herbaceous-dominated invasion stages is likely due to the difference in species composition. The other plant species present in stages I and II were generally annual and perennial native forbs, while those in stages III and IV were mostly annual invasive forbs (Table S5).
+Carbon concentrations of *P. secunda*  , *B. tectorum* and other plants were higher in the wet year (2016) than the dry year (2013), and nitrogen concentrations were lower in the wet year. Because N concentrations were lower in the wet year, C:N ratios were higher (Fig. 4, Table 1). *B. tectorum* had lower C concentrations in stage I than all other stages in the dry year (2013) (Fig. 4). *P. secunda*   had higher N concentrations in stage III than II in 2013, but N concentrations did not vary by invasion stage in 2016. Both species had higher C concentration in stage III than stages I and II and higher N concentrations in stage IV than in stages I and II. As a result, C:N ratios were lower in stage IV than in stages I and II. The contrast in nutrient concentrations for other plants between the shrub-dominated versus herbaceous-dominated invasion stages is likely due to the difference in species composition. The other plant species present in stages I and II were generally annual and perennial native forbs, while those in stages III and IV were mostly annual invasive forbs (Table S5).
 
 
-![Effects of year and invasion stage on plant tissue C and N concentrations. Open circles represent individual measurements. Diamonds and error bars represent the marginal means and 95% confidence intervals estimated from the linear mixed models. Year was always significant. When the interaction between invasion stage and year is significant, colored lowercase letters above the bars illustrate differences between years within each invasion stage based on the Tukey Honest Significant Differences post-hoc test. Grey capital letters illustrate significant differences among invasion stages when the interaction was not significant.](figures/tidy_plantvars_year.png)
+
 
 ## 3.4 Path models for soil total nitrogen and carbon
 
 Path models fit well with values approaching 1 for measures of fit (CFI, TLI) and values approaching 0 for measures of error (RMSEA, SRMR, Table S6). Covariance matrices for each path model are in the supplemental material in Tables S7-S8. The models for soil total C and N were quite different when split between the shrub-dominated invasion stages (I & II) and those dominated by invasive annuals (III & IV). The model for stages I & II had many direct climate effects on soil total C and N, with indirect effects through the litter C:N ratio and perennial native grass cover. In contrast, in the model for the later invasion stages soil total C and N were strongly influenced by annual invasive grass cover.
 
 
-![Path models predicting soil total carbon and nitrogen for (a) invasion stages I & II, and (b) invasion stages III & IV. Paths are based on bootstrapped standardized solutions (R=5000); those with bootstrapped confidence intervals crossing zero have been omitted. The numbers along each path are the median standardized coefficients, which also correspond to the line widths. The numbers below each endogenous or response variable are the median bootstrapped R$^2$ values. Gray and black lines indicate positive relationships; orange and red lines indicate negative relationships. AET = actual evapotranspiration; T$_\text{min}$ = minimum temperature; P$_\text{ant}$ = antecedent precipitation; $\sigma_\text{CWD}$ = standard deviation of climatic water deficit; AIF = annual invasive forb cover; Litter = litter cover; NF = native forb cover; AIG = annual invasive grass cover; PNG = perennial native grass cover; Shrubs = shrub cover; BSC = biological soil crust cover; N$_\text{soil}$= soil total nitrogen; C$_\text{soil}$ = soil total carbon.](figures/newsems/soilcn_panel.png)
-
-The model for invasion stages I and II explained 84% of the variation for soil total C and 61% for soil total N (Figure 5a). Litter C:N, PNG, shrub cover, and $\sigma_\text{CWD}$ were positively related to soil total C. P$_\text{ant}$ was negatively related to soil total C, but positively influenced PNG and negatively influenced litter C:N. The indirect and total effects of P$_\text{ant}$ on soil total C mediated through litter C:N were negative, while the effects of P$_\text{ant}$ mediated through PNG were neutral (Table 3). Shrub cover and PNG had positive effects on soil total N, while P$_\text{ant}$ and AET had negative effects. The indirect effects of P$_\text{ant}$ and AET mediated through PNG were both neutral.
-
-The model for invasion stages III & IV explained 62% of the variation for soil total C and 59% of the variation for soil total N (Figure 5b). Both soil total C and soil total N were positively influenced by $\sigma_\text{CWD}$ and negatively influenced by AIG. The indirect and total effects of P$_\text{ant}$ mediated through AIG were negative for total soil C and neutral for soil total N. The indirect effects of T$_\text{min}$ mediated through AIG were positive for soil total C and neutral for soil total N (Table 4). The total effect of T$_\text{min}$ mediated through AIG was positive.
 
 
-```{r sc_tab}
-lut_exo <- c("aet" = "Actual Evapotranspiration",
-             "cwd" = "sd(Climatic Water Deficit)",
-             "lcn" = "C:N<sub>litter</sub>",
-             "p2" = "Antecedent Precipitation",
-             "shr" = "Shrub Cover",
-             "tmn" = "Minimum Temperature")
+The model for invasion stages I and II explained 84% of the variation for soil total C and 61% for soil total N (Fig. 5a). Litter C:N, PNG, shrub cover, and $\sigma_\text{CWD}$ were positively related to soil total C. P$_\text{ant}$ was negatively related to soil total C, but positively influenced PNG and negatively influenced litter C:N. The indirect and total effects of P$_\text{ant}$ on soil total C mediated through litter C:N were negative, while the effects of P$_\text{ant}$ mediated through PNG were neutral (Table 3). Shrub cover and PNG had positive effects on soil total N, while P$_\text{ant}$ and AET had negative effects. The indirect effects of P$_\text{ant}$ and AET mediated through PNG were both neutral.
 
-sndf_3<- read_csv("data/booted_sn_3_table.csv")%>%
-  mutate(exogenous_var = lut_exo[exogenous_var],
-         
-         `Soil N` = ifelse(!is.na(sig),
-                             str_c(signif(median,2), " ", sig),
-                             signif(median,2)))%>%
-  dplyr::select(-median,-ci_025, -ci_975, -sig)
+The model for invasion stages III & IV explained 62% of the variation for soil total C and 59% of the variation for soil total N (Fig. 5b). Both soil total C and soil total N were positively influenced by $\sigma_\text{CWD}$ and negatively influenced by AIG. The indirect and total effects of P$_\text{ant}$ mediated through AIG were negative for total soil C and neutral for soil total N. The indirect effects of T$_\text{min}$ mediated through AIG were positive for soil total C and neutral for soil total N (Table 4). The total effect of T$_\text{min}$ mediated through AIG was positive.
 
-scdf_3<- read_csv("data/booted_sc_3_table.csv") %>%
-  mutate(exogenous_var = lut_exo[exogenous_var],
-         `Soil C` = ifelse(!is.na(sig),
-                             str_c(signif(median,2), " ", sig),
-                             signif(median,2))) %>%
-  dplyr::select(-median,-ci_025, -ci_975, -sig) %>%
-  full_join(sndf_3, by=c("exogenous_var", "effect_type", "mediator(s)")) %>%
-  mutate(exogenous_var = str_replace_all(exogenous_var, "sd\\(Climatic Water Deficit\\)",
-                                         "$\\\\sigma$ Climatic Water Deficit"))%>%
-  arrange(exogenous_var, 'mediator(s)') %>%
-  separate(`Soil C`, c("Soil C", "sigc"), sep = " ",convert = T)%>%
-  separate(`Soil N`, c("Soil N", "sign"), sep = " ",convert=T)
-
-sndf_1<- read_csv("data/booted_sn_1_table.csv")%>%
-  mutate(exogenous_var = lut_exo[exogenous_var],
-         
-         `Soil N` = ifelse(!is.na(sig),
-                             str_c(signif(median,2), " ", sig),
-                             signif(median,2)))%>%
-  dplyr::select(-median,-ci_025, -ci_975, -sig)
-
-scdf_1<- read_csv("data/booted_sc_1_table.csv") %>%
-  mutate(exogenous_var = lut_exo[exogenous_var],
-         `Soil C` = ifelse(!is.na(sig),
-                             str_c(signif(median,2), " ", sig),
-                             signif(median,2))) %>%
-  dplyr::select(-median,-ci_025, -ci_975, -sig) %>%
-  full_join(sndf_1, by=c("exogenous_var", "effect_type", "mediator(s)")) %>%
-  mutate(exogenous_var = str_replace_all(exogenous_var, "sd\\(Climatic Water Deficit\\)",
-                                         "$\\\\sigma$ Climatic Water Deficit"))%>%
-  arrange(exogenous_var, "mediator(s)")
-
-scdf_11<- scdf_1%>%
-  separate(`Soil C`, c("Soil C", "sigc"), sep = " ",convert = T)%>%
-  separate(`Soil N`, c("Soil N", "sign"), sep = " ",convert=T) %>%
-  dplyr::select(-exogenous_var) %>%
-  dplyr::rename(`Exogenous Variable, Effect Type` = effect_type, `Mediator(s)` = `mediator(s)`)%>%
-  mutate(`Mediator(s)` = str_to_upper(`Mediator(s)`),
-         `Invasion Stages` = "I and II")
-
-# %>%
-#   kable(booktabs=T,escape=F, digits=2,
-#         col.names = c("", "Mediator(s)", "Soil C", "", "Soil N", ""),
-#         caption = "Indirect and total effects of climatic variables on soil total nitrogen and carbon for invasion stages I and II. Values are the median of the bootstrapped (n=5000) coefficients, and stars indicate that the 95 percent confidence intervals did not cross zero. Median coefficients for the direct effects are displayed in Figure 5a."
-#         ) %>%
-#   group_rows(index = table(scdf_1$exogenous_var), escape=F) %>%
-#   footnote(general = c("PNG = perennial native grass","LCN = Litter C:N ratio")) %>%
-#   kable_styling(font_size = 8)
-```
-
-```{r}
-scdf_3 %>%
-  dplyr::select(-exogenous_var) %>%
-  dplyr::rename(`Exogenous Variable, Effect Type` = effect_type, `Mediator(s)` = `mediator(s)`)%>%
-  mutate(`Mediator(s)` = str_to_upper(`Mediator(s)`),
-         `Invasion Stages` = "III and IV")%>%
-  rbind(scdf_11) %>%
-  arrange(`Invasion Stages`) %>%
-  kable(booktabs=T,escape=F, digits=2,
-        col.names = c("", "Mediator(s)", "Soil C", "", "Soil N", "", "Invasion Stages"),
-        caption = "Indirect and total effects of climatic variables on soil total nitrogen and carbon for stages III and IV. Values are the median of the bootstrapped (n=5000) coefficients, and stars indicate that the 95 percent confidence intervals did not cross zero. Median coefficients for the direct effects are displayed in Figure 5b."
-        ) %>%
-  group_rows(index = c(table(scdf_1$exogenous_var), table(scdf_3$exogenous_var)), escape=F) %>%
-  row_spec(6,hline_after = TRUE) %>%
-  # footnote(general = c("AIG = annual introduced grass","AIF = annual introduced forb")) %>%
-  kable_styling(font_size = 8)
-```
 
 
 
 # 4. DISCUSSION
 
-Here we demonstrate that the well-documented sensitivity of herbaceous cover to inter-annual climatic variability [@Witwicki2016; @Pilliod2017; @Hallett2019; @Felton2021] mediates the effects of progressive invasion of exotic annual grasses and changes in plant functional group composition on soil total C and N, and plant tissue C and N. Our NMS ordination indicated that differences in community composition were affecting soil total N and total C pools, while our linear mixed models indicated that year effects were a primary driver. Using path models to incorporate the effects of interannual climatic variability, we showed that different variables were determining soil total C and soil total N in the different invasion stages. Furthermore, climate-driven differences in herbaceous plant cover drove soil total C and soil total N in different directions depending on the composition of the herbaceous vegetation, with annual invaders resulting in losses of soil total C and soil total N, and native perennials resulting in increases (Figure 5).
+Here we demonstrate that the well-documented sensitivity of herbaceous cover to inter-annual climatic variability [@Witwicki2016; @Pilliod2017; @Hallett2019; @Felton2021] mediates the effects of progressive invasion of exotic annual grasses and changes in plant functional group composition on soil total C and N, and plant tissue C and N. Our NMS ordination indicated that differences in community composition were affecting soil total N and total C pools, while our linear mixed models indicated that year effects were a primary driver. Using path models to incorporate the effects of interannual climatic variability, we showed that different variables were determining soil total C and soil total N in the different invasion stages. Furthermore, climate-driven differences in herbaceous plant cover drove soil total C and soil total N in different directions depending on the composition of the herbaceous vegetation, with annual invaders resulting in losses of soil total C and soil total N, and native perennials resulting in increases (Fig. 5).
 
 To our knowledge, this is the first study in this system where multiple sites were sampled across a broad geographic extent, and both the stage of invasion and interannual climatic variability were taken into account. Prior studies on the relationship between *B. tectorum* invasion and soil total N and C pools are conflicting, with reports of both higher [@Booth2003; @Hooker2008biogeochem; @Gasch2013] and lower [@Rau2011; @Stark2015] levels after invasion. Failure to adequately account for spatial and interannual climate variability within an ecosystem is a common shortcoming in ecological research [@Werner2020] and helps explain the discrepancies in prior studies.
 
 ## 4.1 Annual grass invasion and loss of shrubs reduce and homogenize soil total N and C
 
-The path model for invasion stages III and IV indicated direct positive relationships between climatic variables and AIG cover, and direct negative relationships between AIG cover and soil total N and soil total C (Figure 5b). It is likely that the observed interactions between invasion stage and year effects (Table 1) are the result of climate amplifying the negative effect of annual grass productivity on soil total N and soil total C in stages III and IV. Our finding that increased annual grass cover was associated with  soil N and soil total C losses in invasion stages lII and IV in the wetter year is consistent with an emerging consensus that the rate of nutrient cycling is likely higher in *B. tectorum*-invaded environments in the Great Basin, and this is amplified in higher moisture years. One mechanism for faster nutrient cycling under *B. tectorum* in favorable years may be increased root exudation of N into the soil by *B. tectorum* [@Morris2016], which initiates a self-reinforcing feedback that facilitates *B. tectorum* growth [@OConner2015; @Blank2016]. Increased nutrient cycling can lead to labile N and C removal from near surface soil layers via percolation, respiration, denitrification, and runoff [@Austin2004; @Norton2004]. In drier years, water from smaller precipitation events that does not provide sufficient moisture for plants to activate is still used by soil microbes to mineralize N and C [@Fierer2002; @Fierer2003; @Dijkstra2012; @Evans2013].
+The path model for invasion stages III and IV indicated direct positive relationships between climatic variables and AIG cover, and direct negative relationships between AIG cover and soil total N and soil total C (Fig. 5b). It is likely that the observed interactions between invasion stage and year effects (Table 1) are the result of climate amplifying the negative effect of annual grass productivity on soil total N and soil total C in stages III and IV. Our finding that increased annual grass cover was associated with  soil N and soil total C losses in invasion stages lII and IV in the wetter year is consistent with an emerging consensus that the rate of nutrient cycling is likely higher in *B. tectorum*-invaded environments in the Great Basin, and this is amplified in higher moisture years. One mechanism for faster nutrient cycling under *B. tectorum* in favorable years may be increased root exudation of N into the soil by *B. tectorum* [@Morris2016], which initiates a self-reinforcing feedback that facilitates *B. tectorum* growth [@OConner2015; @Blank2016]. Increased nutrient cycling can lead to labile N and C removal from near surface soil layers via percolation, respiration, denitrification, and runoff [@Austin2004; @Norton2004]. In drier years, water from smaller precipitation events that does not provide sufficient moisture for plants to activate is still used by soil microbes to mineralize N and C [@Fierer2002; @Fierer2003; @Dijkstra2012; @Evans2013].
 
 The loss of biological soil crust (BSC) due to soil disturbance and fire often accompanies *B. tectorum* invasion, and further reduces the capacity of invaded sites to retain soil N and C. At our study sites, BSC cover was lower at the invaded sagebrush stage (II) than in the uninvaded stage, and essentially absent at cheatgrass-dominated (III) and cheatgrass die-off (IV) stages (Table S5). In addition to providing N input [@Condon2018; @Belnap2016; @Weber2016], BSC reduces the rate of soil drying, and thus gives plants more time to activate and uptake newly available resources [@Austin2004]. The loss of BSC as a source of N input, combined with increased nutrient cycling leading to N and C exiting the system, may add up to significant yearly losses in near-surface soils [@Austin2004].
 
@@ -508,13 +275,13 @@ The lack of shrub cover and uniform distribution of annual herbaceous plants at 
 
 ## 4.2 Soil, plant and litter C and N concentrations are strongly influenced by interannual climate variability
 
-Interannual climate variability affected every variable we measured: soil total C, soil total N, and the C:N ratios of litter and soil, and the tissues of *P. secunda*  , *B. tectorum*, and other plants (Table 1, Figures 3-6). The large interannual differences in soil total C (Figure 3b) were unexpected, because soil organic C is usually considered to be fairly stable [but see @Lehmann2015; @Morgan2016]. In sagebrush ecosystems, soil water content is the primary driver of soil C mineralization [@Norton2012]. When soil is wet, C cycling rates can be an order of magnitude greater than when soil is dry [@Saetre2005]. Increased litter inputs associated with *B. tectorum* invasion are associated with higher labile C in the top 10 cm and higher C mineralization rates [@Norton2012]. In addition to losses from higher rates of soil respiration, this increased nutrient cycling may be leading to significant C losses through vertical movement of labile C from the top 0-10 cm sampled here to deeper soil depths [@Nagy2021].
+Interannual climate variability affected every variable we measured: soil total C, soil total N, and the C:N ratios of litter and soil, and the tissues of *P. secunda*  , *B. tectorum*, and other plants (Table 1). The large interannual differences in soil total C (Fig. 3b) were unexpected, because soil organic C is usually considered to be fairly stable [but see @Lehmann2015; @Morgan2016]. In sagebrush ecosystems, soil water content is the primary driver of soil C mineralization [@Norton2012]. When soil is wet, C cycling rates can be an order of magnitude greater than when soil is dry [@Saetre2005]. Increased litter inputs associated with *B. tectorum* invasion are associated with higher labile C in the top 10 cm and higher C mineralization rates [@Norton2012]. In addition to losses from higher rates of soil respiration, this increased nutrient cycling may be leading to significant C losses through vertical movement of labile C from the top 0-10 cm sampled here to deeper soil depths [@Nagy2021].
 
-The cover and tissue nutrient content of the herbaceous plants were strongly influenced by interannual climatic variability (Figure 4). The resulting effect on litter chemistry may have regional scale consequences for fire risk and nutrient cycling. Plant biomass produced in dry periods becomes litter with low C:N ratios [@Evans2013], which may persist for 2-3 years [@Pilliod2017]. This can lead to increased rates of nutrient cycling and, thus, loss of mineralized N through leaching and gaseous loss of CO$_2$, nitrification of NH$_4$, and denitrification of NO$_3$ when soil moisture is available [@Austin2004; @Evans2013]. In contrast, biomass produced in wetter periods becomes litter with higher C:N ratios. In the wet period, litter C:N was higher, *B. tectorum* and *P. secunda* C:N ratios were universally higher, and other plant C:N ratios were higher in invasion stages III and IV. The layer of dead and cured fine fuel created by the pulse of growth in wet years will potentially persist longer than the fuel produced in dry years, because litter with higher C:N ratios may decompose more slowly [@Pausas2017; @Grootemaat2015]. Consequently, in wet years there is not only an increase in fine fuel biomass, but those fine fuels may be more flammable and take longer to decompose.
+The cover and tissue nutrient content of the herbaceous plants were strongly influenced by interannual climatic variability (Fig. 4). The resulting effect on litter chemistry may have regional scale consequences for fire risk and nutrient cycling. Plant biomass produced in dry periods becomes litter with low C:N ratios [@Evans2013], which may persist for 2-3 years [@Pilliod2017]. This can lead to increased rates of nutrient cycling and, thus, loss of mineralized N through leaching and gaseous loss of CO$_2$, nitrification of NH$_4$, and denitrification of NO$_3$ when soil moisture is available [@Austin2004; @Evans2013]. In contrast, biomass produced in wetter periods becomes litter with higher C:N ratios. In the wet period, litter C:N was higher, *B. tectorum* and *P. secunda* C:N ratios were universally higher, and other plant C:N ratios were higher in invasion stages III and IV. The layer of dead and cured fine fuel created by the pulse of growth in wet years will potentially persist longer than the fuel produced in dry years, because litter with higher C:N ratios may decompose more slowly [@Pausas2017; @Grootemaat2015]. Consequently, in wet years there is not only an increase in fine fuel biomass, but those fine fuels may be more flammable and take longer to decompose.
 
 ## 4.3.  Drivers of soil C and N differ with invasion stage
 
-Changes in species composition and simplification of plant community structure to a single herbaceous cover layer results in different pathways through which C and N travel. In all stages, the strongest direct predictors of C and N were abundance of the dominant grass type, i.e., PNG in stages I and II, and AIG in stages III and IV (Figure 5). In stages I and II, PNG had positive relationships with soil total N and soil total C, and the negative effect of higher water availability on soil total N and C was dampened by its positive influence on PNG cover. In these stages, sites with higher cover of shrubs, BSC, NF, and PNG were all associated with higher soil total N and C. This agrees with prior work indicating that sagebrush communities sequester C [@Prater2006], but that their ability to sequester C declines as the cover of key ecosystem components declines. In stages III and IV, the simplified species composition yielded a simple path model centered around a single pathway through AIG. In these sites, P$_\text{ant}$ led to higher AIG which led to lower soil total N and soil total C. In contrast to *Artemisia*-dominated stages I and II, the negative effect of higher water availability on soil total N and soil total C was amplified by its effect on the abundance of AIG, agreeing with @Prater2006 who found *B. tectorum* monocultures to be a net C source.
+Changes in species composition and simplification of plant community structure to a single herbaceous cover layer results in different pathways through which C and N travel. In all stages, the strongest direct predictors of C and N were abundance of the dominant grass type, i.e., PNG in stages I and II, and AIG in stages III and IV (Fig. 5). In stages I and II, PNG had positive relationships with soil total N and soil total C, and the negative effect of higher water availability on soil total N and C was dampened by its positive influence on PNG cover. In these stages, sites with higher cover of shrubs, BSC, NF, and PNG were all associated with higher soil total N and C. This agrees with prior work indicating that sagebrush communities sequester C [@Prater2006], but that their ability to sequester C declines as the cover of key ecosystem components declines. In stages III and IV, the simplified species composition yielded a simple path model centered around a single pathway through AIG. In these sites, P$_\text{ant}$ led to higher AIG which led to lower soil total N and soil total C. In contrast to *Artemisia*-dominated stages I and II, the negative effect of higher water availability on soil total N and soil total C was amplified by its effect on the abundance of AIG, agreeing with @Prater2006 who found *B. tectorum* monocultures to be a net C source.
 
 Litter chemistry and abundance is known to change after invasion with important consequences for soil nutrient cycling [@Ehrenfeld2003, @Sperry2006, @Norton2008]. Because the vast majority of litter is dead plant material from the previous growing season, litter C:N ratios are reflective of the conditions of the preceding growing season. Here, litter C:N ratios operated differently between the soil total C and soil total N path models. In stages I and II litter C:N ratio was positively related to soil total C. Antecedent precipitation drove decreases in both soil total C, and litter C:N ratios, and higher litter C:N ratios amplified the effect of P$_\text{ant}$ on soil total C (Table 4). @Huber2019 also found that increases in winter rainfall can turn soil under sagebrush plants into a net C source. In stages III and IV, litter C:N ratio was not a significant part of the model, perhaps because the litter layer was composed mainly *B. tectorum* detritus, and the C:N ratio did not differ between years.
 
@@ -549,4 +316,282 @@ We are grateful to C. Nick Whittemore and Margaret Ryback for their tireless wor
 
 <div id ="refs"></div>
 
-\eleft
+\newpage
+
+# 8. TABLES
+
+<!-- Table 1. Type III ANOVA results for soil total C and N, soil C:N ratio, soil nutrients, and litter and plant %C, %N, and C to N ratios. ANOVAs are based on mixed models with year and invasion stage as fixed effects, and site as the random effect. Denominator degrees of freedom (not shown) and F-statistics were calculated using the Kenward-Roger method -->
+
+
+
+```{r results='asis'}
+aov_tab_s<-readRDS("data/aov_tab_soil.RDS") %>%
+  arrange(desc(response))%>%
+  filter(response != "Soil Ca (kg/ha)",
+         response != "Soil Mg (kg/ha)",
+         response != "Soil SO4 (kg/ha)")
+aov_tab_p<-readRDS("data/aov_tab_plnt.RDS")
+
+index_s <- table(aov_tab_s$response) %>%
+                 as.data.frame() %>%
+                 arrange(desc(Var1))
+
+index_ss<- index_s$Freq
+names(index_ss) <- index_s$Var1
+
+soil_aov <- aov_tab_s %>%
+  mutate(variable = replace(variable, variable == "Site.type",
+                            "Invasion Stage"))%>%
+  mutate(variable = replace(variable,
+                            variable == "Year:Site.type",
+                            "Year x Invasion Stage")) %>%
+  mutate(`F value` = round(`F value`, 1),
+         DenDF = round(DenDF,1),
+         `Sum Sq` = round(`Sum Sq`, 1),
+         `Mean Sq` = round(`Mean Sq`, 1),
+         `P(>F)` = formatC(`Pr(>F)`, format = "f", digits=3) %>%
+           as.character %>%
+           replace(.=="0.000", "<0.001"))%>%
+  arrange(desc(response)) %>%
+  dplyr::select(-`Sum Sq`, -`Mean Sq`, -DenDF, -NumDF, -`Pr(>F)`) %>%
+  mutate(response = str_replace_all(response,"SurSo4", "SO4"),
+         response = str_replace_all(response,"Mineral N", "NH4 + NO3"),
+         response = str_replace_all(response,"Nitrate", "NO3"),
+         response = str_replace_all(response,"Ammonium", "NH4"),
+         response = str_replace_all(response, " \\(kg/ha\\)", ""),
+         response = str_replace_all(response, " \\(%\\)", ""))%>%
+  pivot_wider(id_cols = response, names_from = "variable", values_from = c("F value", "P(>F)"))%>%
+  mutate(order = factor(response, levels =  c("Soil Total N",
+                                                 "Soil Total C",
+                                                 "Soil C:N",
+                                                 "Soil NO3",
+                                                 "Soil NH4",
+                                                 "Soil NH4 + NO3",
+                                                 "Soil SO4",
+                                                 "Soil Mg",
+                                                 "Soil Ca",
+                                                 "Litter N",
+                                                 "Litter C",
+                                                 "Litter C:N"))) %>%
+  arrange(order) %>%
+    mutate(response = str_replace_all(response, "3", "$_3$"),
+           response = str_replace_all(response, "4", "$_4$"))%>%
+  dplyr::select("Response Variable"=response,
+                -order,
+                Year = "F value_Year",
+                "Year_" = "P(>F)_Year",
+                "Invasion Stage"= "F value_Invasion Stage",
+                "Invasion Stage_"= "P(>F)_Invasion Stage",
+                "Year x Invasion Stage" = "F value_Year x Invasion Stage",
+                "Year x Invasion Stage_" = "P(>F)_Year x Invasion Stage")
+
+plant_aov<-
+aov_tab_p%>%
+  mutate(variable = replace(variable, variable == "Site.type",
+                            "Invasion Stage"))%>%
+  mutate(variable = replace(variable,
+                            variable == "Year:Site.type",
+                            "Year x Invasion Stage")) %>%
+  mutate(`F value` = round(`F value`, 1),
+         DenDF = round(DenDF,1),
+         `Sum Sq` = round(`Sum Sq`, 1),
+         `Mean Sq` = round(`Mean Sq`, 1),
+         `P(>F)` = formatC(`Pr(>F)`, format = "f", digits=3) %>%
+           as.character %>%
+           replace(.=="0.000", "<0.001")) %>%
+  arrange(desc(response)) %>%
+  mutate(response = str_replace_all(response,"Poa", "\\\\emph\\{Poa\\}"))%>%
+  mutate(response = str_replace_all(response,"Bromus", "\\\\emph\\{Bromus\\}"))%>%
+  mutate(response = str_replace_all(response, "\\(%\\)", "")) %>%
+  dplyr::select(-`Sum Sq`, -`Mean Sq`, -DenDF, -NumDF,-`Pr(>F)`) %>%
+  pivot_wider(id_cols = response, names_from = "variable", values_from = c("F value", "P(>F)"))%>%
+  arrange(response) %>%
+  dplyr::select("Response Variable"=response,
+                Year = "F value_Year",
+                "Year_" = "P(>F)_Year",
+                "Invasion Stage"= "F value_Invasion Stage",
+                "Invasion Stage_"= "P(>F)_Invasion Stage",
+                "Year x Invasion Stage" = "F value_Year x Invasion Stage",
+                "Year x Invasion Stage_" = "P(>F)_Year x Invasion Stage")
+```
+
+
+```{r}
+
+kable(rbind(soil_aov, plant_aov),
+      booktabs=TRUE,
+      linesep=c("","","\\addlinespace"),
+      escape=F,
+      col.names=c("",
+                  "F", "P(>F)","F",
+                  "P(>F)","F", "P(>F)"),
+        caption = "Type III ANOVA results for soil total C and N, soil C:N ratio, soil nutrients, and litter and plant \\%C, \\%N, and C to N ratios. ANOVAs are based on mixed models with year and invasion stage as fixed effects, and site as the random effect. Denominator degrees of freedom (not shown) and F-statistics were calculated using the Kenward-Roger method") %>%
+add_header_above(c(" " = 1, "Year" = 2, "Invasion Stage" = 2, "Year x Invasion Stage"=2)) %>%
+  kableExtra::kable_styling(font_size = 8,latex_options = "hold_position")
+    # group_rows(index = index_ss)
+# 
+# write_csv(rbind(soil_aov, plant_aov), "table1.csv")
+```
+
+\newpage
+
+<!-- Table 2. Comparisons of stages I-II and stages III-IV and of the wet (2016) and dry (2013) years based on standard deviations calculated from three replicate samples from each site, averaged within each category. Letters indicate significant differences between grouped stages and years based on Kruskal-Wallis tests. -->
+
+```{r, message=F, echo=F, warning=F, results='asis'}
+heterogeneity_table_long_s <- read_csv("figures/heterogeneity_table_long_sup.csv") %>%
+  filter(variable != "SOIL_Ca_kg_ha",
+         variable != "SOIL_Mg_kg_ha",
+         variable != "SOIL_SurSo4_kg_ha")
+
+heterogeneity_table_long_s %>%
+  mutate(variable = lut_variables[variable]) %>%
+    mutate(variable = str_replace_all(variable, "3", "$_3$"),
+           variable = str_replace_all(variable, "4", "$_4$"),
+           variable = str_replace(variable, "SurSo", "SO"),
+           variable = str_replace_all(variable, "\\(", "\\("),
+           variable = str_replace_all(variable, "\\)", "\\)"),
+           variable = str_replace_all(variable, "\\%", "\\\\%"),
+           variable = factor(variable, levels =c("Soil Total N (kg/ha)",
+                                                 "Soil Total C (kg/ha)",
+                                                 "Soil C:N",
+                                                 # "Soil SO$_4$ (kg/ha)",
+                                                 # "Soil Ca (kg/ha)",
+                                                 # "Soil Mg (kg/ha)",
+                                                 "Litter N (\\%)",
+                                                 "Litter C (\\%)",
+                                                 "Litter C:N")))%>%
+  arrange(variable) %>%
+  kable(caption = "Comparisons of stages I-II and stages III-IV and of the wet (2016) and dry (2013) years based on standard deviations calculated from three replicate samples from each site, averaged within each category. Letters indicate significant differences between grouped stages and years based on Kruskal-Wallis tests.",
+        format = "latex", digits=1,
+        escape=F,
+        booktabs=T,
+        linesep=c("","","\\addlinespace"),
+        col.names = c("", "Stages I-II","", "Stages III-IV","",
+                      "2016 (Wet)","", "2013 (Dry)",""))%>%
+  kable_styling(font_size = 8, latex_options = "hold_position") %>%
+  column_spec(c(2,4,6,8), width = "1cm") %>%
+  column_spec(6, width = "1cm", border_left = T) %>%
+  column_spec(c(3,5,7,9), width = "0.5cm")
+
+# heterogeneity_table_long_s %>%
+#   mutate(variable = lut_variables[variable]) %>%
+#     mutate(variable = str_replace_all(variable, "3", "$_3$"),
+#            variable = str_replace_all(variable, "4", "$_4$"),
+#            variable = str_replace(variable, "SurSo", "SO"),
+#            variable = str_replace_all(variable, "\\(", "\\("),
+#            variable = str_replace_all(variable, "\\)", "\\)"),
+#            variable = str_replace_all(variable, "\\%", "\\\\%"),
+#            variable = factor(variable, levels =c("Soil Total N (kg/ha)",
+#                                                  "Soil Total C (kg/ha)",
+#                                                  "Soil C:N",
+#                                                  # "Soil SO$_4$ (kg/ha)",
+#                                                  # "Soil Ca (kg/ha)",
+#                                                  # "Soil Mg (kg/ha)",
+#                                                  "Litter N (\\%)",
+#                                                  "Litter C (\\%)",
+#                                                  "Litter C:N")))%>%
+#   arrange(variable) %>%
+#   write_csv("table2.csv")
+```
+
+\newpage
+
+<!-- Table 3. Indirect and total effects of climatic variables on soil total nitrogen and carbon. Values are the median of the bootstrapped (n=5000) coefficients, and stars indicate that the 95 percent confidence intervals did not cross zero. Median coefficients for the direct effects are displayed in Fig. 5. -->
+
+```{r sc_tab}
+lut_exo <- c("aet" = "Actual Evapotranspiration",
+             "cwd" = "sd(Climatic Water Deficit)",
+             "lcn" = "C:N<sub>litter</sub>",
+             "p2" = "Antecedent Precipitation",
+             "shr" = "Shrub Cover",
+             "tmn" = "Minimum Temperature")
+
+sndf_3<- read_csv("data/booted_sn_3_table.csv")%>%
+  mutate(exogenous_var = lut_exo[exogenous_var],
+
+         `Soil N` = ifelse(!is.na(sig),
+                             str_c(signif(median,2), " ", sig),
+                             signif(median,2)))%>%
+  dplyr::select(-median,-ci_025, -ci_975, -sig)
+
+scdf_3<- read_csv("data/booted_sc_3_table.csv") %>%
+  mutate(exogenous_var = lut_exo[exogenous_var],
+         `Soil C` = ifelse(!is.na(sig),
+                             str_c(signif(median,2), " ", sig),
+                             signif(median,2))) %>%
+  dplyr::select(-median,-ci_025, -ci_975, -sig) %>%
+  full_join(sndf_3, by=c("exogenous_var", "effect_type", "mediator(s)")) %>%
+  mutate(exogenous_var = str_replace_all(exogenous_var, "sd\\(Climatic Water Deficit\\)",
+                                         "$\\\\sigma$ Climatic Water Deficit"))%>%
+  arrange(exogenous_var, 'mediator(s)') %>%
+  separate(`Soil C`, c("Soil C", "sigc"), sep = " ",convert = T)%>%
+  separate(`Soil N`, c("Soil N", "sign"), sep = " ",convert=T)
+
+sndf_1<- read_csv("data/booted_sn_1_table.csv")%>%
+  mutate(exogenous_var = lut_exo[exogenous_var],
+
+         `Soil N` = ifelse(!is.na(sig),
+                             str_c(signif(median,2), " ", sig),
+                             signif(median,2)))%>%
+  dplyr::select(-median,-ci_025, -ci_975, -sig)
+
+scdf_1<- read_csv("data/booted_sc_1_table.csv") %>%
+  mutate(exogenous_var = lut_exo[exogenous_var],
+         `Soil C` = ifelse(!is.na(sig),
+                             str_c(signif(median,2), " ", sig),
+                             signif(median,2))) %>%
+  dplyr::select(-median,-ci_025, -ci_975, -sig) %>%
+  full_join(sndf_1, by=c("exogenous_var", "effect_type", "mediator(s)")) %>%
+  mutate(exogenous_var = str_replace_all(exogenous_var, "sd\\(Climatic Water Deficit\\)",
+                                         "$\\\\sigma$ Climatic Water Deficit"))%>%
+  arrange(exogenous_var, "mediator(s)")
+
+scdf_11<- scdf_1%>%
+  separate(`Soil C`, c("Soil C", "sigc"), sep = " ",convert = T)%>%
+  separate(`Soil N`, c("Soil N", "sign"), sep = " ",convert=T) %>%
+  dplyr::select(-exogenous_var) %>%
+  dplyr::rename(`Exogenous Variable, Effect Type` = effect_type, `Mediator(s)` = `mediator(s)`)%>%
+  mutate(`Mediator(s)` = str_to_upper(`Mediator(s)`),
+         `Invasion Stages` = "I and II")
+
+scdf_3 %>%
+  dplyr::select(-exogenous_var) %>%
+  dplyr::rename(`Exogenous Variable, Effect Type` = effect_type, `Mediator(s)` = `mediator(s)`)%>%
+  mutate(`Mediator(s)` = str_to_upper(`Mediator(s)`),
+         `Invasion Stages` = "III and IV")%>%
+  rbind(scdf_11) %>%
+  arrange(`Invasion Stages`) %>%
+  kable(booktabs=T,escape=F, digits=2,
+        col.names = c("", "Mediator(s)", "Soil C", "", "Soil N", "", "Invasion Stages"),
+        caption = "Indirect and total effects of climatic variables on soil total nitrogen and carbon. Values are the median of the bootstrapped (n=5000) coefficients, and stars indicate that the 95 percent confidence intervals did not cross zero. Median coefficients for the direct effects are displayed in Fig. 5."
+        ) %>%
+  group_rows(index = c(table(scdf_1$exogenous_var), table(scdf_3$exogenous_var)), escape=F) %>%
+  row_spec(6,hline_after = TRUE) %>%
+  footnote(general = c("AIG = annual introduced grass","AIF = annual introduced forb")) %>%
+  kable_styling(font_size = 8, latex_options = "hold_position")
+
+# scdf_3 %>%
+#   dplyr::select(-exogenous_var) %>%
+#   dplyr::rename(`Exogenous Variable, Effect Type` = effect_type, `Mediator(s)` = `mediator(s)`)%>%
+#   mutate(`Mediator(s)` = str_to_upper(`Mediator(s)`),
+#          `Invasion Stages` = "III and IV")%>%
+#   rbind(scdf_11) %>%
+#   arrange(`Invasion Stages`)%>%
+  # write_csv("table3.csv")
+```
+
+\newpage
+
+# 9. FIGURES
+
+![Climatic conditions from January 2011 to January 2017 at the study sites. Dashed vertical lines are the dates of soil and litter sampling, dotted vertical lines are the dates of vegetation cover and biomass sampling. a-c show the monthly anomaly from 30-year normals of actual evapotranspiration, climatic water deficit, and minimum temperature, with each line representing one study site. In d, bars show the monthly precipitation anomaly at the Winnemucca, Nevada airport. The red lines represent yearly averages.](figures/figure_1_climate.pdf)
+
+![Non-metric multidimensional scaling ordination illustrating the differences in understory composition, and soil, plant and litter N and C between 2013 and 2016. Graphs illustrate (a), the mean change from 2013 to 2016 by invasion stage;  (b), significant correlations (p < 0.05) of plant functional group cover with the ordination; and (c), significant correlations of soil, plant and litter nutrient concentrations with the ordination. The arrows in (a) represent the direction and magnitude of change. The length of each arrow in (b) and (c) corresponds to the R$^2$ of the correlation. AIG = annual invasive grass cover; AIF = annual invasive forb cover; PNF = perennial native forb cover; PNG = perennial native grass cover.](figures/fig_2_nmds_3panel.png)
+
+![Effects of year and invasion stage on soil total C and N, soil C:N ratio (a-c), litter %C, %N, and C:N ratio (d-f), and soil total mineral N, nitrate, and ammonium (g-i). Open circles represent individual measurements. Diamonds and error bars represent the marginal means and 95% confidence intervals estimated from the linear mixed models. Year was always significant. When the interaction between invasion stage and year is significant, colored lowercase letters above the bars illustrate differences between years within each invasion stage based on the Tukey Honest Significant Differences post-hoc test. Grey capital letters illustrate significant differences among invasion stages when the interaction was not significant.](figures/tidy_soilvars_year.png)
+
+![Effects of year and invasion stage on plant tissue C and N concentrations. Open circles represent individual measurements. Diamonds and error bars represent the marginal means and 95% confidence intervals estimated from the linear mixed models. Year was always significant. When the interaction between invasion stage and year is significant, colored lowercase letters above the bars illustrate differences between years within each invasion stage based on the Tukey Honest Significant Differences post-hoc test. Grey capital letters illustrate significant differences among invasion stages when the interaction was not significant.](figures/tidy_plantvars_year.png)
+
+![Path models predicting soil total carbon and nitrogen for (a) invasion stages I & II, and (b) invasion stages III & IV. Paths are based on bootstrapped standardized solutions (R=5000); those with bootstrapped confidence intervals crossing zero have been omitted. The numbers along each path are the median standardized coefficients, which also correspond to the line widths. The numbers below each endogenous or response variable are the median bootstrapped R$^2$ values. Gray and black lines indicate positive relationships; orange and red lines indicate negative relationships. AET = actual evapotranspiration; T$_\text{min}$ = minimum temperature; P$_\text{ant}$ = antecedent precipitation; $\sigma_\text{CWD}$ = standard deviation of climatic water deficit; AIF = annual invasive forb cover; Litter = litter cover; NF = native forb cover; AIG = annual invasive grass cover; PNG = perennial native grass cover; Shrubs = shrub cover; BSC = biological soil crust cover; N$_\text{soil}$= soil total nitrogen; C$_\text{soil}$ = soil total carbon.](figures/newsems/soilcn_panel.png)
+
+<!-- \eleft -->

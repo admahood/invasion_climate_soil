@@ -94,11 +94,11 @@ if(!file.exists("data/def_aet_tmin.csv")){
 
 def_aet_norms <- read_csv("data/def_aet_norms.csv") %>%
   mutate(plot = as.character(plot)) %>%
-  dplyr::select(-X1) %>%
+  dplyr::select(-`...1`) %>%
   dplyr::rename(norm=value)
   
 output_data <- read_csv("data/def_aet_tmin.csv")%>%
-  dplyr::select(-X1)%>%
+  dplyr::select(-`...1`)%>%
   mutate(month = as.numeric(substr(date, 6,7)), 
          plot = as.character(plot)) %>%
   left_join(def_aet_norms, by=c("plot","variable","month")) %>%
@@ -158,7 +158,7 @@ for(i in 8:16){
 weather$SVP = 610.7* (10^((7.5*weather$HOURLYDRYBULBTEMPC)/(237.3 + weather$HOURLYDRYBULBTEMPC)))
 weather$VPD = ((100 - weather$HOURLYRelativeHumidity)/100) * weather$SVP
 
-
+library(doBy)
 monthly_precip_sums = summaryBy(HOURLYPrecip ~ year_month, data = na.omit(weather), FUN = sum)
 monthly_precip_sums$date = paste0(monthly_precip_sums$year_month, "-01")
 monthly_precip_sums$date = as.Date(monthly_precip_sums$date)
@@ -301,8 +301,10 @@ panel <- ggarrange(oc1,oc2,oc3,pp1, nrow=4,
                               "(c) Minimum Temperature", 
                               "(d) Precipitation"),
                    label.x = 0.05,hjust = "left") %>%
-  annotate_figure(left= text_grob("Standarized Values", rot = 90)) +
-  ggsave("figures/figure_1_climate.pdf", limitsize = F, width = 10, height = 7.5) 
+  annotate_figure(left= text_grob("Standarized Values", rot = 90))
+
+ggsave("figures/figure_1_climate.pdf",plot = panel, limitsize = F, dpi = 300,
+       width = 10, height = 7.5) 
 
 
 
@@ -538,8 +540,9 @@ big_p<-ggarrange(p2,p3, p4,font.label = list(size=30),
           labels = c("(a)", "(b)", "(c)", "(d)"),
           label.x = 0.85, label.y=0.95,
           widths = c(2.5,2.5, 2.5,2.5)) 
-ggsave(big_p,filename = "figures/fig_2_nmds_3panel.png",
-         width = 19, height = 6.5)
+ggsave(big_p,filename = "figures/fig_2_nmds_3panel_final.pdf",
+         width = 19, height = 6.5, bg="white", dpi=300)
+
 # Figures 3 & 4: site means by year and site type =========================
 # 
 

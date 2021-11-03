@@ -287,13 +287,7 @@ parameterestimates(scn_34_fit) %>%
   arrange(desc(mean)) %>%
   filter(max >0.05, min >0.05)
 resid(scn_34_fit, "cor") 
-# 
-# scn_boot <- bootstrapLavaan(scn_fit, verbose = T,
-#                             FUN = boot_std,
-#                             R = 5000)
-# 
-# saveRDS(scn_boot, "data/scn_boot.RDS")
-# 
+
 summary(scn_3_fit, rsquare=T, fit.measures=T, standardized=T)
 
 # 
@@ -301,14 +295,6 @@ ggsem(scn_34_fit,
       variable = "Soil Total C & N, Cheatgrass Dominated Sites",
       filename = "figures/newsems/scn_no_gps_stage3.png",
       groups = "All Sites")
-
-# 
-# ggsem_boot(scn_boot,
-#            scn_fit,
-#            variable = "scn",
-#            filename="figures/newsems/scn_no_gps.png",
-#            groups = "All Sites")
-
 
 
 # bromus ======================
@@ -837,6 +823,8 @@ ps1 <- ggsem_boot(boot_fit=scn_1_boot,
                   legend=FALSE,
                   filename="figures/newsems/scn_1_no_aig.png");ps1
 
-ggarrange(ps1, ps3, leg, nrow=1, 
-          widths = c(1,1, 0.5))+
-  ggsave("figures/newsems/soilcn_panel.png", height=8, width = 20)
+soil_panel<- ggarrange(ps1, ps3, leg, nrow=1, 
+          widths = c(1,1, 0.5))
+
+ggsave("figures/newsems/soilcn_panel.png", soil_panel, height=8, width = 20, 
+       dpi=600, bg="white")

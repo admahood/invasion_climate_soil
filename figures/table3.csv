@@ -1,0 +1,15 @@
+"Exogenous Variable, Effect Type",Mediator(s),Soil C,sigc,Soil N,sign,Invasion Stages
+Indirect (single pathway),PNG,0.19,NA,0.25,NA,I and II
+Total,PNG,-0.06,NA,-0.26,NA,I and II
+Indirect (single pathway),LCN,-0.3,*,NA,NA,I and II
+Indirect (single pathway),PNG,0.26,NA,0.34,NA,I and II
+Total,LCN,-0.74,*,NA,NA,I and II
+Total,PNG,-0.17,NA,-0.27,NA,I and II
+Indirect (multiple pathways),AIF AIG,-0.098,NA,-0.079,NA,III and IV
+Indirect (single pathway),AIG,-0.31,NA,-0.27,NA,III and IV
+Total,AIF AIG,-0.17,NA,-0.14,NA,III and IV
+Total,AIG,0.081,NA,0.13,NA,III and IV
+Indirect (single pathway),AIG,-1.2,*,-1,NA,III and IV
+Total,AIG,-0.7,*,-0.5,NA,III and IV
+Indirect (single pathway),AIG,0.55,*,0.48,NA,III and IV
+Total,AIG,NA,NA,0.54,*,III and IV

@@ -103,7 +103,7 @@ plot_the_stuff<- function(x,  post_mod) {
         xlab("Year") +
         facet_wrap(~invasion_stage, nrow=1)+
         ggthemes::theme_clean() +
-        theme(axis.title.y = element_markdown(),
+        theme(axis.title.y = element_markdown(size = 12, family = "Helvetica"),
               legend.position = "none",
               panel.spacing = unit(0, "lines"),
               panel.border = element_rect(fill=NA, size=0))
@@ -139,10 +139,14 @@ plant_vars_y <- resp[1:9] %>%
   lapply(plot_the_stuff, post_mod = post_mod)%>%
   ggarrange(plotlist = ., nrow=3, ncol=3, labels = plot_labs) 
 
-ggsave(plant_vars_y, filename = "figures/tidy_plantvars_year.png",height=8, width=10)
+ggsave(plant_vars_y, filename = "figures/tidy_plantvars_year.png",height=8, width=10, dpi = 600)
+ggsave(plant_vars_y, filename = "figures/tidy_plantvars_year.pdf",
+       height=8, width=10, bg="white", dpi = 600,device=cairo_pdf)
 
 soil_vars_y <- resp[c(10:12, 16:21)] %>%
   lapply(plot_the_stuff, post_mod = post_mod)%>%
   ggarrange(plotlist = ., nrow=3, ncol=3, labels = plot_labs)
 
-ggsave(soil_vars_y, filename="figures/tidy_soilvars_year.png",height=8, width=10)
+ggsave(soil_vars_y, filename="figures/tidy_soilvars_year.png",height=8, width=10, dpi = 600)
+ggsave(soil_vars_y, filename="figures/tidy_soilvars_year.pdf",height=8, width=10,
+       bg="white", dpi = 600)
