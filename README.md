@@ -16,5 +16,5 @@ Things might be a little less than straightforward, but the data are all there. 
 
 Full citation for the paper is here:
 
-Mahood, A. L., Jones, R. O., Board, D. I., Balch, J. K., & Chambers, J. C. (2021). Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semiarid shrubland. Global Change Biology, 00, 1– 18. https://doi-org.colorado.idm.oclc.org/10.1111/gcb.15921 
+Mahood, A. L., Jones, R. O., Board, D. I., Balch, J. K., & Chambers, J. C. (2021). Interannual climate variability mediates changes in carbon and nitrogen pools caused by annual grass invasion in a semiarid shrubland. Global Change Biology, 00, 1– 18. https://doi.org/10.1111/gcb.15921 
 
